@@ -34,6 +34,7 @@ public class Student {
 
     void printName(String firstname,int weight)
     {
+
         System.out.println("Hello "+firstname+" your weight is "+weight);
         System.out.println(city);
     }
