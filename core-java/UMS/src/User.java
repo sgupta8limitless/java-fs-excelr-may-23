@@ -1,5 +1,6 @@
 public class User {
 
+    private int id;
     private String name;
     private int age;
     private float salary;
@@ -7,8 +8,9 @@ public class User {
     private String department;
 
 
-    public User(String name,int age,float salary,String city,String department)
+    public User(int id,String name,int age,float salary,String city,String department)
     {
+        this.id=id;
         this.name=name;
         this.age=age;
         this.salary=salary;
@@ -16,10 +18,22 @@ public class User {
         this.department=department;
     }
 
+    public int getId()
+    {
+        return id;
+    }
+
+    public float getSalary()
+    {
+        return salary;
+    }
+
     @Override
     public String toString() {
+
         return "User{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 ", salary=" + salary +
                 ", city='" + city + '\'' +

@@ -8,6 +8,8 @@ public class Main {
         do {
             System.out.println("1. Create New User");
             System.out.println("2. View All Users");
+            System.out.println("3. Delete a User");
+            System.out.println("4. Search By Salary");
             System.out.println("Choose an option");
             int choice = sc.nextInt();
 
@@ -18,6 +20,16 @@ public class Main {
                 }
                 case 2: {
                     uc.displayUsers();
+                    break;
+                }
+                case 3:{
+                    System.out.println("Enter user id");
+                    int id=sc.nextInt();
+                    uc.deleteUser(id);
+                    break;
+                }
+                case 4:{
+                    uc.searchBySalary();
                     break;
                 }
             }
