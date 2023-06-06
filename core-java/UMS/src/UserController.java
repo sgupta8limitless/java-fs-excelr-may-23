@@ -5,6 +5,8 @@ public class UserController {
     Scanner sc=new Scanner(System.in);
     User[] users=new User[10];
 
+
+
     int count=0;
     public void create()
     {
@@ -36,6 +38,7 @@ public class UserController {
             if(users[i].getId()==id)
             {
                 users[i]=null;
+                System.out.println("User Deleted Successfully");
                 break;
             }
 
@@ -54,6 +57,76 @@ public class UserController {
             if(users[i].getSalary()>minsal && users[i].getSalary()<maxsal)
             {
                 System.out.println(users[i]);
+            }
+        }
+
+    }
+
+
+    public void updateUser(int id)
+    {
+
+        for(int i=0;i<count;i++)
+        {
+            if(users[i].getId()==id)
+            {
+
+                System.out.println("Choose what you want to update");
+                System.out.println("1. Name");
+                System.out.println("2. Age");
+                System.out.println("3. Salary");
+                System.out.println("4. City");
+                System.out.println("5. Department");
+                int choice =  sc.nextInt();
+
+                switch (choice)
+                {
+                    case 1:{
+                        System.out.println("Enter New Name");
+                        String newname=sc.next();
+                        users[i].setName(newname);
+                        System.out.println("Name Updated Successfully");
+                        break;
+                    }
+                    case 2:{
+                        System.out.println("Enter New Age");
+                        int newage=sc.nextInt();
+                        users[i].setAge(newage);
+                        System.out.println("Age Updated Successfully");
+                        break;
+                    }
+                    case 3:{
+                        System.out.println("Enter New Salary");
+                        float newsalary=sc.nextFloat();
+                        users[i].setSalary(newsalary);
+                        System.out.println("Salary Updated Successfully");
+                        break;
+                    }
+                    case 4:{
+                        System.out.println("Enter New City");
+                        String newcity=sc.next();
+                        users[i].setCity(newcity);
+                        System.out.println("City Updated Successfully");
+                        break;
+                    }
+                    case 5:{
+                        System.out.println("Enter New Department");
+                        String newdep=sc.next();
+                        users[i].setDepartment(newdep);
+                        System.out.println("Department Updated Successfully");
+                        break;
+                    }
+                    default:{
+                        System.out.println("Select a proper option");
+                    }
+
+
+                }
+
+
+                break;
+
+
             }
         }
 

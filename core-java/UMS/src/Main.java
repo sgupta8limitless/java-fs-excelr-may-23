@@ -10,6 +10,7 @@ public class Main {
             System.out.println("2. View All Users");
             System.out.println("3. Delete a User");
             System.out.println("4. Search By Salary");
+            System.out.println("5. Update a user");
             System.out.println("Choose an option");
             int choice = sc.nextInt();
 
@@ -32,12 +33,21 @@ public class Main {
                     uc.searchBySalary();
                     break;
                 }
+                case 5:{
+                    System.out.println("Enter user id");
+                    int id=sc.nextInt();
+                    uc.updateUser(id);
+                    break;
+                }
+                default:{
+                    System.out.println("Select a proper option");
+                }
             }
 
             System.out.println("Do You Want to continue 1-Yes 0-No");
             status=sc.nextInt();
         }
-        while(status!=0);
+        while(status==1);
 
 
 
