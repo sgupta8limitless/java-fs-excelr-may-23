@@ -5,27 +5,34 @@ public class UserController {
     Scanner sc=new Scanner(System.in);
     User[] users=new User[10];
 
+    int userIndex=0;
 
 
-    int count=0;
     public void create()
     {
-        System.out.println("Enter Id,Name,Age,Salary,City & Department res");
-        int id=sc.nextInt();
-        String name=sc.next();
-        int age=sc.nextInt();
-        float salary=sc.nextFloat();
-        String city=sc.next();
-        String department=sc.next();
+        if(userIndex<=9)
+        {
+            System.out.println("Enter Id,Name,Age,Salary,City & Department res");
+            int id=sc.nextInt();
+            String name=sc.next();
+            int age=sc.nextInt();
+            float salary=sc.nextFloat();
+            String city=sc.next();
+            String department=sc.next();
 
-        users[count]=new User(id,name,age,salary,city,department);
-        count++;
+            users[userIndex]=new User(id,name,age,salary,city,department);
+            userIndex++;
+        }
+        else
+        {
+            System.out.println("No More Space Left");
+        }
 
     }
 
     public void displayUsers()
     {
-        for(int i=0;i<count;i++)
+        for(int i=0;i<userIndex;i++)
         {
             System.out.println(users[i]);
         }
@@ -33,17 +40,31 @@ public class UserController {
 
     public void deleteUser(int id)
     {
-         for(int i=0;i<count;i++)
+         for(int i=0;i<userIndex;i++)
         {
             if(users[i].getId()==id)
             {
                 users[i]=null;
                 System.out.println("User Deleted Successfully");
+
+
+                for(int j=i;j<userIndex;j++)
+                {
+                    users[j]=users[j+1];
+                }
+
+                userIndex--;
+
+
+
                 break;
             }
 
 
         }
+
+
+
     }
 
     public void searchBySalary()
@@ -52,7 +73,7 @@ public class UserController {
         float minsal=sc.nextFloat();
         float maxsal=sc.nextFloat();
 
-        for(int i=0;i<count;i++)
+        for(int i=0;i<userIndex;i++)
         {
             if(users[i].getSalary()>minsal && users[i].getSalary()<maxsal)
             {
@@ -66,7 +87,7 @@ public class UserController {
     public void updateUser(int id)
     {
 
-        for(int i=0;i<count;i++)
+        for(int i=0;i<userIndex;i++)
         {
             if(users[i].getId()==id)
             {
