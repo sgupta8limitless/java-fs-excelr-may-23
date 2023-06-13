@@ -51,6 +51,8 @@ public class Main {
 
 //        int[] arr={23,12,56,2,6,8};
 //
+
+//
 //        for(int i=1;i<arr.length;i++)
 //        {
 //            int val=arr[i];
