@@ -1,6 +1,7 @@
 package product;
 
 
+import brand.Brand;
 import category.Category;
 
 public class Product {
@@ -8,12 +9,12 @@ public class Product {
     private int id;
     private String name;
     private float price;
-    private String brand;
+    private Brand brand;
 
     private Category category;
 
 
-    public Product(int id, String name, float price, String brand, Category category) {
+    public Product(int id, String name, float price, Brand brand, Category category) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -45,11 +46,11 @@ public class Product {
         this.price = price;
     }
 
-    public String getBrand() {
+    public Brand getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(Brand brand) {
         this.brand = brand;
     }
 

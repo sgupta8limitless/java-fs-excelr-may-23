@@ -1,11 +1,13 @@
 package product;
 
 import category.Category;
+import globals.Controller;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ProductController {
+
+public class ProductController implements Controller {
 
 
     ArrayList<Product> products=new ArrayList();
@@ -19,6 +21,10 @@ public class ProductController {
         categories.add(new Category(1,"Clothing","Clothing Category"));
         categories.add(new Category(2,"Electronics","Electronics Category"));
         categories.add(new Category(3,"Sports","Sports Category"));
+
+
+
+
 
 
 
@@ -55,7 +61,7 @@ public class ProductController {
     }
 
 
-    public void displayAll()
+    public void show()
     {
         for(Product p : products)
         {

@@ -1,3 +1,4 @@
+import globals.Controller;
 import product.ProductController;
 
 import java.util.Scanner;
@@ -6,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner=new Scanner(System.in);
-        ProductController productController=new ProductController();
+        Controller productController=new ProductController();
 
         int option;
 
@@ -24,7 +25,7 @@ public class Main {
                     break;
                 }
                 case 2: {
-                    productController.displayAll();
+                    productController.show();
                     break;
                 }
                 case 3: {

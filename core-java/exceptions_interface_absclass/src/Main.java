@@ -1,7 +1,13 @@
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+
 public class Main {
+
+
+
+
     public static void main(String[] args) throws NameSizeException,AgeException {
 
 
@@ -42,26 +48,44 @@ public class Main {
 //}
 
 
-        Scanner sc=new Scanner(System.in);
+//        Scanner sc=new Scanner(System.in);
+//
+//        System.out.println("Enter the name");
+//        String name=sc.next();
+//
+//
+//        if (name.length() > 20) {
+//            throw new NameSizeException("Name  is grater than 20");
+//        }
+//
+//        System.out.println("Enter the age");
+//        int age=sc.nextInt();
+//
+//        if(age>50)
+//        {
+//            throw new AgeException("Age greater than 50");
+//        }
 
-        System.out.println("Enter the name");
-        String name=sc.next();
 
 
-        if (name.length() > 20) {
-            throw new NameSizeException("Name  is grater than 20");
-        }
-
-        System.out.println("Enter the age");
-        int age=sc.nextInt();
-
-        if(age>50)
-        {
-            throw new AgeException("Age greater than 50");
-        }
+//        AbsDemoChild absDemoChild=new AbsDemoChild();
+//
+//        absDemoChild.doSomething();
+//
+//        System.out.println(absDemoChild.name);
 
 
+//        System.out.println(StatDemo.pi);
 
+//        StatDemo s1=new StatDemo();
+//        StatDemo s2=new StatDemo();
+//        StatDemo s3=new StatDemo();
+
+//        s1.name="Saurabh";
+
+
+
+//        System.out.println(StatDemo.name);
 
 
 
