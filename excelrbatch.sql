@@ -68,6 +68,10 @@ select * from products where created_at = '2023-07-12 21:06:36';
 
 delete from products where id=4;
 
+
+
+
+
 -- to update a record 
 update products
 set price = 15
@@ -80,6 +84,107 @@ where id=2;
 
 
 desc products;
+
+
+
+
+
+
+
+-- department table 
+
+create table departments(
+id int primary key auto_increment,
+name varchar(20) not null unique,
+created_at timestamp default current_timestamp,
+updated_at timestamp default current_timestamp on update current_timestamp
+);
+
+insert into departments(name) values('IT'),('Sales'),('Marketing'),('HR');
+
+select * from departments;
+
+delete from departments;
+
+truncate table departments;
+
+-- set foreign_key_checks = 1;
+
+
+-- ///////////
+
+
+create table employees
+(
+id int primary key auto_increment,
+name varchar(30) not null,
+email varchar(30) not null unique,
+salary bigint not null check(salary > 0),
+did int,
+foreign key(did) references departments(id),
+created_at timestamp default current_timestamp,
+updated_at timestamp default current_timestamp on update current_timestamp
+);
+
+desc employees;
+
+
+insert into employees(name,email,salary,did) values('Tharun','thar@gmail.com',23000,null);
+
+select * from departments;
+select * from employees;
+
+
+-- joining multiple tables and viewing data
+
+
+-- inner join 
+
+select d.name,e.name,e.salary from departments d inner join employees e
+on d.id = e.did;
+
+
+select d.name,e.name,e.salary from departments d,employees e
+where d.id=e.did;
+
+
+
+
+
+select * from employees right join departments
+on departments.id = employees.did;
+
+select * from employees cross join departments;
+
+
+-- timepass
+
+create table kschool(
+id int primary key auto_increment,
+name varchar(30),
+mid int,
+foreign key(mid) references kschool(id)
+);
+
+insert into kschool(name,mid) values('Manoj',2);
+
+select * from kschool;
+
+select * from kschool k1 inner join kschool k2
+on k1.id=k2.mid;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
