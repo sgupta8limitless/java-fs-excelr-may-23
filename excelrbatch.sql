@@ -184,6 +184,14 @@ select price from products;
 select sum(price) from products;
 
 
+-- group by - it is used to group the number of records based on a column - mostly it is always used with aggregate functions 
+-- having - it is used to write where conditions after group by - mainly used for using aggregate func in conditions
+
+select count(*),category from products
+group by category
+having count(*)=2;
+;
+
 
 
 
