@@ -102,9 +102,8 @@ insert into dishes(name,price) values
 
 
 insert into bookings(room_id,customer_id,check_in,check_out,total_amount) values
-(1,2,'2023-07-19','2023-07-20',2000),
-(3,3,'2023-07-20','2023-07-23',9000),
-(4,4,'2023-07-19','2023-07-20',5000);
+(5,2,'2023-07-19','2023-07-20',8000);
+
 
 
 
@@ -136,6 +135,43 @@ where r.id=b.room_id
 and b.id = f.booking_id
 and d.id = f.dish_id
 and r.room_no = 102;
+ 
+ 
+ 
+ select r.id,r.room_no,c.name,c.id,b.total_amount from rooms r,customers c,bookings b
+ where r.id=b.room_id
+ and c.id=b.customer_id;
+ 
+ select * from customers limit 1; -- 0,3; (start,count of records)
+ 
+ 
+
+ 
+ -- get all the bookings and room details for a particular customer
+ 
+ -- display all the customer names who have ever booked room no 102
+ 
+ -- display all the booking details sorted by total_amount in ascending order
+ 
+ -- display the customer name who has payed the highest amount for any booking (limit will be helpfull)
+ 
+ -- display the avg total_amount of booking for a particular customer
+ 
+ -- display all the dishes orderd for room no 201
+ 
+ -- display all the dishes for a particular customer
+ 
+ -- display the customer with most bookings (group by)
+ 
+ -- get all the rooms whose price range is between 2000 - 10000
+ 
+ -- find the most ordered dish of all time 
+ 
+ 
+ 
+ 
+ 
+ 
  
 
 

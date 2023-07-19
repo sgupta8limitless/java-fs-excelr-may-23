@@ -87,10 +87,6 @@ desc products;
 
 
 
-
-
-
-
 -- department table 
 
 create table departments(
@@ -145,10 +141,8 @@ on d.id = e.did;
 
 
 select d.name,e.name,e.salary from departments d,employees e
-where d.id=e.did;
-
-
-
+where d.id=e.did 
+and salary < 30000;
 
 
 select * from employees right join departments
@@ -172,6 +166,27 @@ select * from kschool;
 
 select * from kschool k1 inner join kschool k2
 on k1.id=k2.mid;
+
+
+
+show tables;
+
+select * from products order by price ASC; -- DESC
+
+select min(price)  from products;
+select max(price) from products;
+select avg(price) from products;
+
+select price from products;
+
+select price from products;
+
+select sum(price) from products;
+
+
+
+
+
 
 
 
