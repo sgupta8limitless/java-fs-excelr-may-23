@@ -193,6 +193,62 @@ having count(*)=2;
 ;
 
 
+-- command to create user 
+
+create user dummy identified by 'dummy';
+
+-- to grant permission to dummy 
+
+grant create on *.* to 'dummy';
+
+
+
+-- deleting a user
+drop user dummy;
+
+
+
+
+-- union 
+
+select * from products where category='Electronics'
+union
+select * from products where quantity=0;
+
+
+
+
+
+select now();
+
+select current_time();
+
+select current_timestamp();
+
+select current_user();
+
+
+
+select (10/100)*price as discount from products;
+
+select pname as product_name from products;
+
+select * from products;
+
+select concat(pname," ",category) as pc from products;
+
+select length(pname) from products;
+
+select substring(pname,3,4) from products;
+
+select replace(pname,'a','c') from products;
+
+select reverse(pname) from products;
+
+
+-- wildcard op %  it is used with op LIKE
+
+select * from products where pname LIKE '%sa%'; 
 
 
 

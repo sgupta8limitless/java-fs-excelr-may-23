@@ -122,7 +122,7 @@ select * from bookings where customer_id=2;
 
 
 -- show email id and name of customer who booked room 101
-select c.email,c.name,r.room_no from rooms r,customers c, bookings b
+select * from rooms r,customers c, bookings b
 where c.id=b.customer_id
 and r.id=b.room_id
 and r.room_no=101;
@@ -166,6 +166,15 @@ and r.room_no = 102;
  -- get all the rooms whose price range is between 2000 - 10000
  
  -- find the most ordered dish of all time 
+ 
+ 
+ select count(*),d.name from dish_orders o,dishes d 
+ where d.id=o.dish_id
+ group by d.name
+ order by count(*) desc
+ limit 1;
+ 
+ sgupta8mz@gmail.com
  
  
  
