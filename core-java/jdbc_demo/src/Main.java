@@ -7,29 +7,13 @@ public class Main {
     public static void main(String[] args) {
 
 
-        try {
+        ProductController productController=new ProductController();
 
+//        productController.create();
 
-            Class.forName("com.mysql.cj.jdbc.Driver");
+//        productController.delete();
 
-
-            Connection connection =
-                    DriverManager.getConnection("jdbc:mysql://localhost:3307/excelrdemo","root","thorabh8");
-
-
-            Statement st=connection.createStatement();
-
-            st.executeUpdate("insert into products(pname,price,category,quantity) values('New PRo',100,'general',22)");
-
-
-
-
-
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        productController.getAll();
 
 
     }
