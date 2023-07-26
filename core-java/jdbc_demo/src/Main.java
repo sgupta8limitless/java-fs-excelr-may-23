@@ -8,12 +8,7 @@ public class Main {
 
 
         ProductController productController=new ProductController();
-
-//        productController.create();
-
-//        productController.delete();
-
-        productController.getAll();
+        productController.createProduct();
 
 
     }
