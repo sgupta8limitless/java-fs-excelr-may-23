@@ -8,8 +8,12 @@ public class Main {
 
 
         ProductController productController=new ProductController();
-        productController.createProduct();
+//        productController.createProduct();
+//        productController.deleteProduct();
 
+//        productController.getAllProducts();
+
+        productController.updateProduct();
 
     }
 }

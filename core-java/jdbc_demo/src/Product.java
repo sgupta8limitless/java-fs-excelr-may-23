@@ -1,3 +1,4 @@
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 public class Product {
@@ -7,9 +8,11 @@ public class Product {
     private int price;
     private String category;
     private int quantity;
-    private LocalDateTime created_at;
+    private Timestamp created_at;
 
-    private LocalDateTime updated_at;
+    private Timestamp updated_at;
+
+    public  Product(){}
 
     public Product(String name, int price, String category, int quantity) {
 
@@ -20,6 +23,15 @@ public class Product {
 
     }
 
+    public Product(int id, String name, int price, String category, int quantity, Timestamp created_at, Timestamp updated_at) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.category = category;
+        this.quantity = quantity;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+    }
 
     public int getId() {
         return id;
@@ -61,19 +73,19 @@ public class Product {
         this.quantity = quantity;
     }
 
-    public LocalDateTime getCreated_at() {
+    public Timestamp getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
+    public void setCreated_at(Timestamp created_at) {
         this.created_at = created_at;
     }
 
-    public LocalDateTime getUpdated_at() {
+    public Timestamp getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(LocalDateTime updated_at) {
+    public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
 }
