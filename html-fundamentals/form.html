@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+
+ 
+    <form>
+
+        
+        <input type="text" pattern="^[A-Z][a-z]+\s[a-z]+$"   placeholder="Enter Name"  minlength="5">
+
+        <input type="email" placeholder="Enter Email" >
+
+        <input type="password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" placeholder="Enter password"  >
+
+        <input type="date">
+
+        <input type="week">
+
+        <input type="month">
+
+
+        <input type="checkbox"> I agree
+
+        <input type="radio">
+
+        <input type="file" >
+
+        <!-- <input type="image" src="./media/icon.png"> -->
+
+        <input type="number" placeholder="Enter number"  min="5" max="10">
+
+        <input type="range" min="10" max="100">
+
+        <input type="color">
+
+        <input type="url"  placeholder="Enter a link">
+
+        <input type="search" placeholder="Search something">
+
+        <input type="time">
+
+        <input type="tel" max="">
+
+
+        <select >
+            <option value="">Select City</option>
+            <option value="M">Mumbai</option>
+            <option value="D">Delhi</option>
+            <option value="H">Hyderabad</option>
+        </select>
+
+        <textarea placeholder="Enter Address" rows="5" cols="20"></textarea>
+
+
+
+
+        <button type="submit">Register</button>
+        <button type="reset">Clear</button>
+        <button type="button" disabled>Dummy</button>
+       
+        
+
+
+
+    </form>
+
+
+
+
+
+</body>
+</html>
