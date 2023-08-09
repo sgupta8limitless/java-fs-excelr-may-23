@@ -1,0 +1,126 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+.header
+{
+    width: 100%;
+    padding: 10px 10%;
+    background-color: #313130;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+.logo 
+{
+    width: fit-content;
+    height: 50px;
+    /* background-color: yellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: segoe UI;
+    font-weight: 200;
+}
+
+.nav 
+{
+    width: 30%;
+    height: 50px;
+    /* background-color: blue; */
+}
+
+.nav-links
+{
+    /* background-color: yellow; */
+    display: flex;
+    height: 50px;
+    list-style-type: none;
+    font-family: segoe UI;
+    font-weight: 200;
+}
+
+.nav-link 
+{
+    /* background-color: green; */
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* places css  */
+.places
+{
+    width: 100%;
+    padding: 30px 10%;
+    background-color: #efefef;
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    
+}
+
+.section_title
+{
+    font-size: 30px;
+    font-family: segoe UI;
+    font-weight: 100;
+}
+
+
+.places_container
+{
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.place 
+{
+    width: fit-content;
+   
+    background-color: white;
+}
+
+.place_image
+{
+    width: fit-content;
+    /* background-color: gray; */
+}
+
+.place_img
+{
+    height: 450px;
+}
+
+.details 
+{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: flex-start;
+    font-family: segoe UI;
+}
+
+
+.btn 
+{
+    padding: 12px 20px;
+    font-weight: bold;
+    font-family: segoe UI;
+    background-color: #313130;
+    color: white;
+    border: none;
+}
