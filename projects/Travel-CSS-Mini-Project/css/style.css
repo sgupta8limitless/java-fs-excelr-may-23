@@ -321,3 +321,143 @@
     font-size: 55px;
 }
 
+@media (max-width:576px) {
+
+    .header{
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 5%;
+        
+    }
+
+    .logo
+    {
+        font-size: 25px;
+    }
+
+    .nav
+    {
+        width: 100%;
+    }
+
+    .bg 
+    {
+        height: 200px;
+        background-size:cover;
+    }
+
+    .banner
+    {
+        font-size: 18px;
+    }
+
+    .cta 
+    {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    .section_title
+    {
+        font-size: 18px;
+    }
+
+    .places 
+    {
+        padding: 20px 5%;
+        row-gap: 20px;
+    }
+
+    .places_container
+    {
+        flex-wrap: wrap;
+    }
+
+    .place 
+    {
+        width: 100%;
+    }
+
+    .place_image
+    {
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .place_img 
+    {
+        width: 100%;
+        height: auto;
+        margin-top: -250px;
+    }
+    
+    .details h2 
+    {
+        font-size: 18px;
+    }
+
+    .details p 
+    {
+        font-size: 16px;
+    }
+
+    .overlay 
+    {
+        padding: 0px 5%;
+    }
+
+    .ac_banner
+    {
+        flex-direction: column;
+    }
+
+    .activity_icon
+    {
+        width: 100%;
+    }
+
+    .ac_icon
+    {
+        font-size: 80px;
+    }
+
+    .activity_icon h1 
+    {
+        font-size: 18px;
+    }
+
+    .vl 
+    {
+        display: none;
+        
+    }
+
+    .social_media
+    {
+        width: 100%;
+    }
+
+    .social_media h1 
+    {
+        font-size: 18px;
+    }
+
+    .social_icons{
+        font-size: 30px;
+    }
+
+    .social_icon
+    {
+        width: 40px;
+        height: 40px;
+    }
+
+    
+
+}
+
+
+
+
+

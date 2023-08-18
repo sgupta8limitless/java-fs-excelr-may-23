@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform</title>
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            
+        }
+
+        .one 
+        {
+            height: 300px;
+            width: 300px;
+            background-color: red;
+            margin: 200px;
+            transition: .3s;
+            font-size: 50px;
+            
+        }
+
+        .one:hover
+        {
+            /* transform: scaleX(2); */
+            /* transform: rotateX(180deg); */
+            /* transform: translateY(-50px) translateX(50px); */
+            /* transform: skewX(60deg); */
+            
+        }
+
+        .card 
+        {
+            width: 17%;
+            background-color: gray;
+            margin: 100px;
+            border: 1ps solid lightgray;
+        }
+
+        .card-img 
+        {
+            height: 300px;
+            width: 100%;
+            background-color: yellow;
+            overflow: hidden;
+        }
+
+        .card-img > img
+        {
+            width: 100%;
+            margin-top: -100px;
+            transition: .4s;
+        }
+
+        .card-img > img:hover 
+        {
+            transform: scale(1.3);
+        }
+
+        .card-details
+        {
+            padding: 20px;
+            font-family: segoe UI;
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    <!-- <div class="one">
+        Thor
+    </div> -->
+
+
+    <div class="card">
+        <div class="card-img">
+            <img src="https://images.pexels.com/photos/4937768/pexels-photo-4937768.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="image">
+        </div>
+        <div class="card-details">
+            <h1>Some Image</h1>
+            <p>Some Text about image</p>
+        </div>
+    </div>
+
+    
+</body>
+</html>
