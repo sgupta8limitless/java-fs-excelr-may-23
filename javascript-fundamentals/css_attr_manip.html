@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS and Attribute Manipulation</title>
+
+    <style>
+        * 
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+        .one 
+        {
+            height: 300px;
+            width: 300px;
+            background-color: red;
+            margin: 20px;
+           
+        }
+
+        button 
+        {
+            padding: 10px 30px;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="one">
+        ABC
+    </div>
+
+    <button id="chng_color" onmouseover="changeColor()">Change Color</button>
+
+    <input type="text" id="name">
+
+    <img id="image" src="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/Chris_Hemsworth_as_Thor.jpg/220px-Chris_Hemsworth_as_Thor.jpg">
+
+
+    <button id="dbtn" >Click</button>
+
+    <script>
+
+
+   
+
+    
+
+    document.getElementById('dbtn').addEventListener('click',function(){
+        // console.log(event);
+
+        // console.log(document.getElementById('name').getAttribute('type'));
+        // document.getElementById('name').setAttribute('type','password');
+
+        // console.log(document.getElementById('name').type);
+
+        // document.getElementById('name').type="password";
+
+        document.getElementById('image').src="https://akns-images.eonline.com/eol_images/Entire_Site/2017216/rs_634x952-170316094114-ThorRagnarok58c9d18ec0d49.jpg?fit=around%7C634:952&output-quality=90&crop=634:952;center,top";
+
+    });
+
+        // add color changing event 
+
+        function changeColor()
+        {
+           document.getElementsByClassName('one')[0].style.backgroundColor="blue";
+           document.getElementsByClassName('one')[0].style.fontSize="40px";
+        }
+
+       
+        // document.getElementById('chng_color')
+        // .addEventListener('mouseover',changeColor);
+
+        document.getElementById('chng_color')
+        .addEventListener('mouseleave',function(){
+            document.getElementsByClassName('one')[0].style.backgroundColor="red";
+            document.getElementsByClassName('one')[0].style.fontSize="16px";
+        })
+
+
+       
+
+
+
+
+
+
+
+
+
+
+        // function demo(dummy)
+        // {
+        //     // sfd
+        //     dummy()
+        // }
+
+        // function doSomething()
+        // {
+        //     console.log("hi");
+        // }
+
+        // demo(function(){
+
+        // });
+
+       
+
+
+
+    </script>
+    
+</body>
+</html>
