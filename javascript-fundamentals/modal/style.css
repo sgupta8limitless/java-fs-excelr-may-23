@@ -1,0 +1,150 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+/* modal css  */
+
+.modal_overlay 
+{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0,.5);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    
+
+}
+
+.modal 
+{
+    width: 50%;
+    height: 600px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: segoe UI;
+    padding: 50px;
+    position: relative;
+}
+
+.close 
+{
+    position: absolute;
+    top: -5px;
+    font-size: 30px;
+    right: -5px;
+    color: rgb(222, 29, 29);
+    cursor: pointer;
+}
+
+
+
+/* header css  */
+
+.header
+{
+    width: 100%;
+    padding: 0px 5%;
+    background-color: #135da0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo 
+{
+    width: 10%;
+    padding: 10px 0px;
+    background-color: yellow;
+}
+
+.nav 
+{
+    width: 30%;
+    padding: 10px 0px;
+    /* background-color: blue; */
+    
+}
+
+.nav>ul 
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav>ul>li{
+    width: 25%;
+    height: 60px;
+    list-style-type:none;
+    color: white;
+    font-family: segoe UI;
+    cursor: pointer;
+    transition: .3s;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.nav>ul>li:hover 
+{
+    text-decoration: underline;
+}
+
+.service
+{
+    
+    flex-direction: column;
+    position: relative;
+    
+
+}
+
+
+
+.services 
+{
+    width: 200px;
+    /* padding: 20px 30px; */
+    background-color: white;
+    position: absolute;
+    top: 60px;
+    /* box-shadow: 0 0 3px 2px rgb(203, 203, 203); */
+    border-radius: 5px;
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: .3s;
+    
+    
+}
+
+.services>ul>li 
+{
+    padding: 10px;
+    color: gray;
+    list-style-type: none;
+    
+}
+
+
+
+
+button 
+{
+    padding:12px 25px;
+    background-color: #2267bc;
+    border: 1px solid #666;
+    color:white;
+    text-decoration:none;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 10px;
+
+}
