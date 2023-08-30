@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array & String Functions</title>
+</head>
+<body>
+
+
+    <script>
+
+
+        // array functions 
+
+        let names = ["Thor","Ironman","Captain America","Wanda","Natash romanoff","hawkeye"];
+
+        // names.push("black widow"); add element at end
+        // names.unshift("wanda"); add element at start
+        
+        // names.pop(); remove one from last
+        // names.pop();
+        // names.shift(); remove one from first
+
+
+        // creating a sperate slice from original arrray without harming it 
+        // let n = names.slice(2,4);
+        // console.log(n);
+
+        // deleting the element from array 
+        // let n = names.splice(2,2)
+        // console.log(n);
+        // console.log(names);
+
+
+        // console.log(names.includes("Gamora"));
+
+        // console.log(names.indexOf("hawkeye"));
+
+
+
+
+
+        let avengers = [
+            {name:"Thor",age:1500,planet:"Asgard"},
+            {name:"Gamora",age:56,planet:"Titan"},
+            {name:"Hulk",age:45,planet:"Earth"}
+        ]
+
+        // for(let i=0;i<names.length;i++)
+        // {
+        //     console.log(names[i]);
+        // }
+
+        //for each - use only for looping 
+        // avengers.forEach(function(value,index,arr){
+        //     console.log(value.name,index,arr);
+        // })
+
+       
+
+       
+
+        // map - used for looping and returning an array 
+
+        // let a = avengers.map((avenger,index,arr)=>{
+
+        //     return avenger.age;
+
+        // })
+
+        // console.log(avengers);
+        // console.log(a);
+
+        // let names = ["Thor","Ironman","Thor","Captain America"];
+
+        // filter 
+
+        // let avengers = [
+        //     {name:"Thor",age:1500,planet:"Asgard"},
+        //     {name:"Gamora",age:56,planet:"Titan"},
+        //     {name:"Hulk",age:45,planet:"Earth"}
+        // ]
+
+    //    let a = avengers.filter((val,index,arr)=>{
+
+          
+    //            return index%2==0;
+           
+
+    //     })
+
+
+        // let data = avengers.findIndex((val,index,arr)=>{
+        //     return index%2==0;
+        // })
+
+        // console.log(data);
+
+
+
+
+        // assignment questions 
+
+        // create a array of mammal objects,  
+        // 1. extract a new array of species of those mammals
+        // 2. filter out the mammals based on if their names starts with s
+
+      
+        
+       
+       
+
+
+    </script>
+    
+</body>
+</html>
