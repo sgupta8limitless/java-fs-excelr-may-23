@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousels</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body 
+        {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+
+        .main 
+        {
+            width: 40%;
+            height: 350px;
+            background-color: yellow;
+            position:relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .carousel
+        {
+            width: 500%;
+            height: 350px;
+            background-color: red;
+            display: flex;
+            flex-shrink: 0;
+            
+            /* transition: .8s; */
+        }
+
+        .frame
+        {
+            height: 350px;
+            width: 20%;
+            background-color: gray;
+            font-size: 100px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .frame:nth-child(1)
+        {
+            background-image: url('https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1600');
+        }
+        .frame:nth-child(2)
+        {
+            background-image: url('https://images.pexels.com/photos/2686558/pexels-photo-2686558.jpeg?auto=compress&cs=tinysrgb&w=1600');
+        }
+        .frame:nth-child(3)
+        {
+            background-image: url('https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1600');
+        }
+        .frame:nth-child(4)
+        {
+            background-image: url('https://images.pexels.com/photos/8797307/pexels-photo-8797307.jpeg?auto=compress&cs=tinysrgb&w=1600');
+        }
+        .frame:nth-child(5)
+        {
+            background-image: url('https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1600');
+        }
+
+
+        .buttons 
+        {
+            width: 100%;
+            padding: 20px;
+          
+            position: absolute;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+         
+        }
+
+
+        .buttons>p{
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,.6);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .buttons>p:hover 
+        {
+            background-color: black;
+        }
+
+
+        
+    </style>
+</head>
+<body>
+
+
+        <section class="main">
+
+            <div class="carousel" id="carousel">
+                <div class="frame"></div>
+                <div class="frame"></div>
+                <div class="frame"></div>
+                <div class="frame"></div>
+                <div class="frame"></div>
+            </div>
+
+        </section>
+
+
+        <section class="main">
+
+            <div class="carousel" id="carousel2">
+                <div class="frame"></div>
+                <div class="frame"></div>
+                <div class="frame"></div>
+                <div class="frame"></div>
+                <div class="frame"></div>
+            </div>
+
+            <div class="buttons">
+
+                <p id="prev"><i class="fa-solid fa-chevron-left"></i></p>
+                <p id="next"><i class="fa-solid fa-chevron-right"></i></p>
+
+            </div >
+
+        </section>
+
+
+        <script src="./script.js"></script>
+    
+</body>
+</html>

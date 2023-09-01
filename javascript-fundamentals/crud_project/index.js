@@ -18,7 +18,8 @@ let places = [
     {
         imageUrl:"https://images.pexels.com/photos/8100784/pexels-photo-8100784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         title:"Wildlife",
-        activities:"Getting Eaten . Injuries. Lot of Running"
+        activities:"Getting Eaten . Injuries. Lot of Running",
+        
     }
 
 
