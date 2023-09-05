@@ -1,62 +1,80 @@
 
 
-let ml = 100;
-
-let slider = setInterval(()=>{
-
-    console.log(-ml);
-
-    document.getElementById('carousel').style.marginLeft = -ml+"%";
-    document.getElementById('carousel').style.transition=".8s";
-
-    if(ml==400)
-    {
-        setTimeout(()=>{
-            ml=100;
-            document.getElementById('carousel').style.transition="0s";
-            document.getElementById('carousel').style.marginLeft=0;
-        },800)
-    }
-
-    ml+=100;
-
-   
-
-},3000)
-
-
-
 
 // logic for second carousel 
 
-let ml2=100;
+function goToSlide(slideNumber,tduration)
+{
+   
+    document.getElementById('carousel2').style.marginLeft = -(slideNumber-1)*100+"%";
+    document.getElementById('carousel2').style.transition=tduration+"s";
+
+    
+}
+
+
+let currentSlide = 2;
+let click=true;
+
 
 document.getElementById('next').addEventListener('click',()=>{
 
-    document.getElementById('carousel2').style.marginLeft = -ml2+"%";
-    document.getElementById('carousel2').style.transition=".8s";
-
-    if(ml2==400)
+    if(click==true)
     {
-        setTimeout(()=>{
-            ml2=100;
-            document.getElementById('carousel2').style.transition="0s";
-            document.getElementById('carousel2').style.marginLeft=0;
-        },800)
-    }
+        click=false;
+        currentSlide++;
+        goToSlide(currentSlide,0.8);
 
-    ml2+=100;
+        if(currentSlide==6)
+        {
+            currentSlide=2;
+            setTimeout(()=>{
+                goToSlide(currentSlide,0);
+            },800)
+        }
+
+        setTimeout(()=>{
+            click=true;
+            console.log(click);
+        },800)
+
+    }
+   
+
+    
+    
 
 
 })
 
+document.getElementById('prev').addEventListener('click',()=>{
+
+    if(click==true)
+    {
+        click=false;
+        currentSlide--;
+        goToSlide(currentSlide,0.8);
+
+        if(currentSlide==1)
+        {
+            currentSlide=5
+            setTimeout(()=>{
+                goToSlide(currentSlide,0);
+            },800)
+        }
+
+        setTimeout(()=>{
+            click=true;
+            console.log(click);
+        },800)
+    }
+    
+
+    
+    
 
 
-
-
-
-
-
+})
 
 
 
