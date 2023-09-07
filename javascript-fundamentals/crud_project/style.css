@@ -1,0 +1,145 @@
+* 
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: segoe UI;
+}
+
+/* css for create form  */
+
+.create
+{
+    width: 100%;
+    padding:20px 5%;
+    /* background-color: red; */
+}
+
+.create h1 
+{
+    font-weight: 300;
+}
+
+.fields
+{
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.fields input 
+{
+    width: 28%;
+    font-size: 16px;
+    text-indent: 20px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    outline: none;
+    
+}
+
+
+.fields input:focus
+{
+    box-shadow: 0 0 3px #278ee2;
+}
+
+/* input::placeholder
+{
+    color: red;
+} */
+
+.fields>button 
+{
+    padding: 12px 35px;
+    /* font-size: 20px; */
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #278ee2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+
+/* main css  */
+
+
+.main
+{
+    width: 100%;
+    padding: 50px 5%;
+    background-color: gray;
+    display: flex;
+    column-gap: calc(20%/3);
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+
+
+
+.card 
+{
+    width: 20%;
+    background-color: white;
+}
+
+.card-img
+{
+    width: 100%;
+    height: 200px;
+    /* background-color: yellow; */
+    overflow: hidden;
+}
+
+.card-img > img 
+{
+    width: 100%;
+    transform: scale(1.3);
+}
+
+
+.card-details
+{
+    width: 100%;
+    padding: 20px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: segoe UI;
+    row-gap: 15px;
+}
+
+.card-details>h1 
+{
+    font-size: 28px;
+}
+
+.card-details>button 
+{
+    padding: 12px 35px;
+    /* font-size: 20px; */
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #278ee2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card-details>button:hover
+{
+    background-color: #1571bc;
+}
+
+.card-details>button:active
+{
+    background-color: #278ee2;
+}
