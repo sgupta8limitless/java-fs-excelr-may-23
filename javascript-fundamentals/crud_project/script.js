@@ -1,30 +1,58 @@
-let places = [
+let places;
 
+if(localStorage.getItem("places")===null)
+{
+    localStorage.setItem("places","[]");
+    
+}
+else 
+{
+    places = JSON.parse(localStorage.getItem("places"));
+   
+}
+
+
+
+
+
+
+
+
+// event for creating a place
+
+
+document.getElementById("create").addEventListener("click",()=>{
+
+    let titleVal = document.getElementById("title").value;
+    let activitiesVal = document.getElementById("activities").value;
+    let imageURLVal = document.getElementById("imageURL").value;
+
+    if(validateForm(titleVal,imageURLVal,activitiesVal)===true)
     {
-        imageUrl:"https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title:"Heavenly Mountains",
-        activities:"Trek . Camping . Skiing"
-    },
-    {
-        imageUrl:"https://images.pexels.com/photos/2113566/pexels-photo-2113566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title:"Beautiful Aurora",
-        activities:"Trek . Camping . Swimming"
-    },
-    {
-        imageUrl:"https://images.pexels.com/photos/10399171/pexels-photo-10399171.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title:"Breathtaking Waterfall",
-        activities:"Rafting . Swimming. Sight Seeing"
-    },
-    {
-        imageUrl:"https://images.pexels.com/photos/8100784/pexels-photo-8100784.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-        title:"Wildlife",
-        activities:"Getting Eaten . Injuries. Lot of Running"
+        let place = {
+
+            title:titleVal,
+            activities:activitiesVal,
+            imageUrl:imageURLVal
+
+        }
+
+        places.push(place);
+
+        localStorage.setItem("places",JSON.stringify(places));
+
+
+
+        displayPlaces();
     }
 
 
-]
+})
 
-// creating logic  
+
+
+
+// form validation function 
 
 function checkHttpUrl(string) {
     let givenURL;
@@ -35,32 +63,28 @@ function checkHttpUrl(string) {
       return false;  
     }
     return givenURL.protocol === "http:" || givenURL.protocol === "https:";
-  }
+}
 
 
-document.getElementById("create").addEventListener("click",()=>{
-
-    let titleVal = document.getElementById("title").value;
-    let activitiesVal = document.getElementById("activities").value;
-    let imageURLVal = document.getElementById("imageURL").value;
-
+function validateForm(title,imageURL,activities)
+{
     let errors = [];
 
-    if(titleVal.length===0)
+    if(title.length===0)
     {
         errors.push("Title should not be empty");
     }
 
-    if(activitiesVal.length===0)
+    if(activities.length===0)
     {
         errors.push("Activities should not be empty");
     }
 
-    if(imageURLVal.length!==0)
+    if(imageURL.length!==0)
     {
 
        
-        if(checkHttpUrl(imageURLVal)===false)
+        if(checkHttpUrl(imageURL)===false)
         {
             errors.push("Not a valid image url")
         }
@@ -70,54 +94,46 @@ document.getElementById("create").addEventListener("click",()=>{
         errors.push("image url cant be empty")
     }
 
-    console.log(errors);
-
-   
     if(errors.length===0)
     {
-        let place = {
-
-        title:titleVal,
-        activities:activitiesVal,
-        imageUrl:imageURLVal
-
-        }
-
-        places.push(place);
-
-        displayPlaces();
+        return true;
     }
 
-
-
-
-
-
-
+    return false;
     
-
-
-
-})
+}
 
 
 
 
-// viewing logic 
+
+// viewing all places 
 
 function displayPlaces()
 {
 
-    document.getElementsByClassName('main')[0].innerHTML="";
+    if(places.length!==0)
+    {
+        document.getElementsByClassName('main')[0].innerHTML="";
 
-    places.forEach((place,index)=>{
+        places.forEach((place,index)=>{
 
-        generateCard(place,index);
+            generateCard(place,index);
 
-    })
+        })
+    }
+    else 
+    {
+        document.getElementsByClassName('main')[0].innerHTML="No Data Available";
+    }
+    
 }
 
-displayPlaces();
+
+
+
+
+// single card generator 
 
 
 function generateCard(place,index)
@@ -147,29 +163,55 @@ function generateCard(place,index)
     let activities=document.createElement('p');
     activities.innerText=place.activities;
 
-    let explore=document.createElement('button');
-    explore.innerText="Explore";
-    explore.addEventListener("click",()=>{
+
+    let actions=document.createElement("div");
+    actions.classList.add('actions');
+
+    let exploreBTN=document.createElement('i');
+    exploreBTN.classList.add("fa-solid"); 
+    exploreBTN.classList.add("fa-eye"); 
+    exploreBTN.classList.add("explore"); 
+    exploreBTN.addEventListener("click",()=>{
 
         console.log(place.title);
     });
 
-    let deleteBTN=document.createElement('button');
-    deleteBTN.innerText="Delete";
+
+    let editBTN = document.createElement("i");
+    editBTN.classList.add("fa-solid"); 
+    editBTN.classList.add("fa-pen-to-square"); 
+    editBTN.classList.add("edit"); 
+
+
+    let deleteBTN = document.createElement("i");
+    deleteBTN.classList.add("fa-regular"); 
+    deleteBTN.classList.add("fa-trash-can"); 
+    deleteBTN.classList.add("delete"); 
+    
 
     deleteBTN.addEventListener("click",()=>{
 
        places.splice(index,1);
+
+       localStorage.setItem("places",JSON.stringify(places));
+
        displayPlaces();
 
     })
 
+    actions.append(exploreBTN,editBTN,deleteBTN);
+
     cardDetails.appendChild(title);
     cardDetails.appendChild(activities);
-    cardDetails.appendChild(explore);
-    cardDetails.append(deleteBTN);
+    cardDetails.appendChild(actions);
     card.appendChild(cardDetails);
 
 
     document.getElementsByClassName('main')[0].appendChild(card);
 }
+
+
+
+// initial calls 
+
+displayPlaces();

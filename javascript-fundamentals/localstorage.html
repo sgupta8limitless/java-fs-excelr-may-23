@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        let data = [
+            {
+                name:"Thor",
+                age:1500
+            },
+            {
+                name:"Captain",
+                age:100
+            }
+
+        ]
+
+
+        // let s = JSON.stringify(data);
+
+        // console.log(JSON.parse(s));
+
+    //    sessionStorage.setItem("name","Saurabh");
+
+        // console.log(sessionStorage.getItem("name"));
+
+
+        localStorage.setItem("data",JSON.stringify(data));
+
+        console.log(JSON.parse(localStorage.getItem("data")));
+
+        // console.log(localStorage.getItem("name"));
+
+        // localStorage.removeItem("name")
+
+
+    </script>
+
+
+</body>
+</html>

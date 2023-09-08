@@ -73,7 +73,7 @@
 {
     width: 100%;
     padding: 50px 5%;
-    background-color: gray;
+    background-color: lightgray;
     display: flex;
     column-gap: calc(20%/3);
     flex-wrap: wrap;
@@ -86,6 +86,9 @@
 {
     width: 20%;
     background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 3px gray;
 }
 
 .card-img
@@ -142,4 +145,37 @@
 .card-details>button:active
 {
     background-color: #278ee2;
+}
+
+.actions
+{
+    display: flex;
+    column-gap: 20px;
+    font-size: 20px;
+}
+
+.actions i 
+{
+    cursor: pointer;
+    transition: .3s;
+}
+
+.actions i:hover 
+{
+    transform: scale(1.2);
+}
+
+.explore
+{
+    color: rgb(56, 160, 201);
+}
+
+.edit 
+{
+    color: green;
+}
+
+.delete
+{
+    color: red;
 }
