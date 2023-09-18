@@ -10,21 +10,43 @@
 <body>
 
 
+    <div class="overlay" id="update_form">
+        <div class="update_form" >
+            <i class="fa-solid fa-circle-xmark" id="close" style="align-self: flex-end;cursor: pointer;"></i>
+            <h1 class="section_title">Update Place</h1>
+            <input type="text" id="title_upt" placeholder="Title">
+            <input type="text" id="activities_upt" placeholder="Activities">
+            <input type="url" id="imageURL_upt" placeholder="Image URL">
+            <button class="main_btn" id="update" type="button">Update</button>
+        </div>
+    </div>
+
+
     <div class="create">
 
-        <h1>Create New Place</h1>
+        <h1 class="section_title">Create New Place</h1>
 
         <div class="fields">
-            <input type="text" id="title" placeholder="Title">
-            <input type="text" id="activities" placeholder="Activities">
-            <input type="url" id="imageURL" placeholder="Image URL">
-            <button id="create" type="button">Create</button>
+            <div class="input-box">
+                <input type="text" id="title" placeholder="Title">
+                <p id="title_error"></p>
+            </div>
+            <div class="input-box">
+                <input type="text" id="activities" placeholder="Activities">
+                <p id="activities_error"></p>
+            </div>
+            <div class="input-box">
+                <input type="url" id="imageURL" placeholder="Image URL">
+                <p id="imageURL_error"></p>
+            </div>
+            <button class="main_btn" id="create" type="button">Create</button>
         </div>
 
     </div>
 
 
     <div class="main"></div>
+
 
 
     <script src="./script.js"></script>

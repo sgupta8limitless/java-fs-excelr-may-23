@@ -2,20 +2,12 @@ let places;
 
 if(localStorage.getItem("places")===null)
 {
-    localStorage.setItem("places","[]");
-    
+    localStorage.setItem("places","[]");   
 }
 else 
 {
     places = JSON.parse(localStorage.getItem("places"));
-   
 }
-
-
-
-
-
-
 
 
 // event for creating a place
@@ -45,15 +37,15 @@ document.getElementById("create").addEventListener("click",()=>{
 
         displayPlaces();
     }
-
+    
 
 })
 
 
 
 
-// form validation function 
 
+// url validation function 
 function checkHttpUrl(string) {
     let givenURL;
     try {
@@ -66,38 +58,59 @@ function checkHttpUrl(string) {
 }
 
 
+
+// form validation function 
 function validateForm(title,imageURL,activities)
 {
     let errors = [];
 
     if(title.length===0)
     {
-        errors.push("Title should not be empty");
+        errors.push("Title Should Not Be Empty");
+        document.getElementById("title_error").innerText="Title should not be empty";
+    }
+    else 
+    {
+        document.getElementById("title_error").innerText="";
     }
 
     if(activities.length===0)
     {
         errors.push("Activities should not be empty");
+        document.getElementById("activities_error").innerText="Activities should not be empty";
+    }
+    else 
+    {
+        document.getElementById("activities_error").innerText="";
     }
 
     if(imageURL.length!==0)
     {
 
        
-        if(checkHttpUrl(imageURL)===false)
+         if(checkHttpUrl(imageURL)===false)
         {
             errors.push("Not a valid image url")
+            document.getElementById("imageURL_error").innerText="Not a valid image url";
+        }
+        else 
+        {
+            document.getElementById("imageURL_error").innerText="";
         }
     }
     else 
     {
         errors.push("image url cant be empty")
+        document.getElementById("imageURL_error").innerText="image url cant be empty";
     }
 
     if(errors.length===0)
     {
         return true;
     }
+
+
+
 
     return false;
     
@@ -129,6 +142,46 @@ function displayPlaces()
     
 }
 
+
+
+// logic for closing modal 
+
+document.getElementById("close").onclick=function(){
+    document.getElementById("update_form").style.display="none";
+}
+
+
+let updateIndex=null;
+
+
+function update()
+{
+    let titleVal = document.getElementById("title_upt").value;
+    let activitiesVal = document.getElementById("activities_upt").value;
+    let imageURLVal = document.getElementById("imageURL_upt").value;
+
+    if(validateForm(titleVal,imageURLVal,activitiesVal)===true)
+    {
+        let updatedPlace = {
+
+            title:titleVal,
+            activities:activitiesVal,
+            imageUrl:imageURLVal
+
+        }
+
+       places[updateIndex] = updatedPlace;
+
+        localStorage.setItem("places",JSON.stringify(places));
+
+        document.getElementById("update_form").style.display="none";
+        
+        displayPlaces();
+    }
+
+}
+
+document.getElementById("update").addEventListener("click",update);
 
 
 
@@ -181,6 +234,17 @@ function generateCard(place,index)
     editBTN.classList.add("fa-solid"); 
     editBTN.classList.add("fa-pen-to-square"); 
     editBTN.classList.add("edit"); 
+    editBTN.addEventListener("click",()=>{
+
+        document.getElementById("update_form").style.display="flex";
+
+        document.getElementById("title_upt").value = place.title;
+        document.getElementById("activities_upt").value = place.activities;
+        document.getElementById("imageURL_upt").value = place.imageUrl;
+
+        updateIndex=index;
+
+    })
 
 
     let deleteBTN = document.createElement("i");
