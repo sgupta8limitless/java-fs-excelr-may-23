@@ -148,6 +148,12 @@ function displayPlaces()
 
 document.getElementById("close").onclick=function(){
     document.getElementById("update_form").style.display="none";
+    
+}
+
+document.getElementById("view_close").onclick=function(){
+    
+    document.getElementById("view_overlay").style.display="none";
 }
 
 
@@ -226,7 +232,11 @@ function generateCard(place,index)
     exploreBTN.classList.add("explore"); 
     exploreBTN.addEventListener("click",()=>{
 
-        console.log(place.title);
+        document.getElementById("view_overlay").style.display="flex";
+        document.getElementById("view_img").src=place.imageUrl;
+        document.getElementById("view_title").innerText=place.title;
+        document.getElementById("view_activities").innerText=place.activities;
+        
     });
 
 
