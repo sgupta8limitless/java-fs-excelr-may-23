@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="Enter ID" id="idval">
+
+    <button id="del-btn">Delete</button>
+
+
+    <script>
+
+
+    // fetching data 
+
+        // fetch("http://localhost:8000/movies",{
+        //     method:"GET"
+        // })
+        // .then((response)=>{
+        //     return response.json()
+        // })
+        // .then((data)=>{
+        //     console.log(data);
+        // })
+        // .catch((err)=>{
+        //     console.log(err);
+        // })
+
+
+    // creating data 
+
+//     let movie = {
+//     "ComingSoon": true,
+//     "Title": "3 Idiots",
+//     "Year": "2016–",
+//     "Rated": "TV-MA",
+//     "Released": "30 Sep 2016",
+//     "Runtime": "55 min",
+//     "Genre": "Action, Crime, Drama",
+//     "Director": "N/A",
+//     "Writer": "Cheo Hodari Coker",
+//     "Actors": "Mahershala Ali, Mike Colter, Frankie Faison, Erik LaRay Harvey",
+//     "Plot": "Given superstrength and durability by a sabotaged experiment, a wrongly accused man escapes prison to become a superhero for hire.",
+//     "Language": "English",
+//     "Country": "USA",
+//     "Awards": "N/A",
+//     "Poster": "http://ia.media-imdb.com/images/M/MV5BMTcyMzc1MjI5MF5BMl5BanBnXkFtZTgwMzE4ODY2OTE@._V1_SX300.jpg",
+//     "Metascore": "N/A",
+//     "imdbRating": "N/A",
+//     "imdbVotes": "N/A",
+//     "imdbID": "tt3322314",
+//     "Type": "series",
+//     "totalSeasons": "1",
+//     "Response": "True",
+//     "Images": [
+//       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMxNjc1NjI0NV5BMl5BanBnXkFtZTgwNzA0NzY0ODE@._V1_SY1000_CR0,0,1497,1000_AL_.jpg",
+//       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjI1MDg3NjY2OF5BMl5BanBnXkFtZTgwNDE1NDU4OTE@._V1_SY1000_CR0,0,1497,1000_AL_.jpg",
+//       "https://images-na.ssl-images-amazon.com/images/M/MV5BOTYzOTQyNDYxNl5BMl5BanBnXkFtZTgwNzA1NDU4OTE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
+//       "https://images-na.ssl-images-amazon.com/images/M/MV5BMTgxMjA3MTQ5Ml5BMl5BanBnXkFtZTgwOTA1NDU4OTE@._V1_SY1000_CR0,0,1498,1000_AL_.jpg",
+//       "https://images-na.ssl-images-amazon.com/images/M/MV5BMjMyNjg5ODYwNF5BMl5BanBnXkFtZTgwMTE1NDU4OTE@._V1_SY1000_CR0,0,1477,1000_AL_.jpg"
+//     ]
+//   }
+
+//     fetch("http://localhost:8000/movies  ",{
+//         method:"POST",
+//         body:JSON.stringify(movie),
+//         headers:{
+//             "Content-Type":"application/json"
+//         }
+//     })
+//     .then((response)=>{
+//         return response.json()
+//     })
+//     .then((data)=>{
+//         console.log(data);
+//     })
+//     .catch((err)=>{
+//         console.log(err);
+//     })
+
+
+
+    // delete request 
+
+
+    
+
+
+    // document.getElementById("del-btn").addEventListener("click",function(){
+
+
+    //     let id = document.getElementById("idval").value;
+
+
+    //     fetch(`http://localhost:8000/movies/${id}`,{
+    //     method:"DELETE"
+    //     })
+    //     .then((response)=>{
+    //         return response.json()
+    //     })
+    //     .then((data)=>{
+    //         console.log(data);
+    //     })
+    //     .catch((err)=>{
+    //         console.log(err);
+    //     })
+
+
+    // })
+
+
+
+        let movie ={
+        "Id": 11,
+        "Title": "Bhagam Bhaag",
+        "Year": "2013",
+        "Rated": "TV-MA",
+        "Released": "28 Aug 2015",
+        "Runtime": "49 min",
+        "Genre": "Biography, Crime, Drama",
+        "Director": "N/A",
+        "Writer": "Carlo Bernard, Chris Brancato, Doug Miro, Paul Eckstein",
+        "Actors": "Wagner Moura, Boyd Holbrook, Pedro Pascal, Joanna Christie",
+        "Plot": "A chronicled look at the criminal exploits of Colombian drug lord Pablo Escobar.",
+        "Language": "English, Spanish",
+        "Country": "USA",
+        "Awards": "Nominated for 2 Golden Globes. Another 4 nominations.",
+        "Poster": "http://ia.media-imdb.com/images/M/MV5BMTU0ODQ4NDg2OF5BMl5BanBnXkFtZTgwNzczNTE4OTE@._V1_SX300.jpg",
+        "Metascore": "N/A",
+        "imdbRating": "8.9",
+        "imdbVotes": "118,680",
+        "imdbID": "tt2707408",
+        "Type": "series",
+        "totalSeasons": "2",
+        "Response": "True",
+        "Images": [
+        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTk2MDMzMTc0MF5BMl5BanBnXkFtZTgwMTAyMzA1OTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMDkyOTEyNV5BMl5BanBnXkFtZTgwNjY3Mjc3OTE@._V1_SY1000_SX1500_AL_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA2NDUwMTU2NV5BMl5BanBnXkFtZTgwNTI1Mzc3OTE@._V1_SY1000_CR0,0,1499,1000_AL_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/M/MV5BODA1NjAyMTQ3Ml5BMl5BanBnXkFtZTgwNjI1Mzc3OTE@._V1_SY1000_CR0,0,1499,1000_AL_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/M/MV5BMTU0NzQ0OTAwNl5BMl5BanBnXkFtZTgwMDAyMzA1OTE@._V1_SX1500_CR0,0,1500,999_AL_.jpg"
+        ]
+    }
+
+
+
+    // fetch("http://localhost:8000/movies/9",{
+    //     method:"PUT",
+    //     body:JSON.stringify(movie),
+    //     headers:{
+    //         "Content-Type":"application/json"
+    //     }
+
+    // })
+    // .then((response)=>{
+    //     return response.json()
+    // })
+    // .then((data)=>{
+    //     console.log(data);
+    // })
+    // .catch((err)=>{
+    //     console.log(err);
+    // })
+    
+
+
+
+
+        // fetch("url",{
+        //     method:"",
+        //     body:JSON.stringify(),
+        //     headers:{
+
+        //     }
+        // })
+        // .then((response)=>{
+        //     return response.json()
+        // })
+        // .then((data)=>{
+        //     console.log(data);
+        // })
+        // .catch((err)=>{
+        //     console.log(err);
+        // })
+
+
+        let product =  {
+                    title: 'test product',
+                    price: 13.5,
+                    description: 'lorem ipsum set',
+                    image: 'https://i.pravatar.cc',
+                    category: 'electronic'
+                }
+
+
+           
+    
+
+            fetch("https://fakestoreapi.com/products",{
+                method:"POST",
+                body:JSON.stringify(product),
+                headers:{
+                    "Content-Type":"application/json"
+                }
+            })
+            .then((response)=>{
+                return response.json()
+            })
+            .then((data)=>{
+                console.log(data);
+            })
+            .catch((err)=>{
+                console.log(err);
+            })
+
+
+
+
+
+        
+
+
+
+    </script>
+
+</body>
+</html>
